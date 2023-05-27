@@ -650,20 +650,6 @@
 			remoteGlobalIDString = E7960F452564CE4D00556B9D;
 			remoteInfo = mt32emu;
 		};
-		E796109C256A6B2B00556B9D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E7B2BBCD252155EE00490083;
-			remoteInfo = iDOSThumbnail;
-		};
-		E796109F256A6B5700556B9D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E7B2BBCD252155EE00490083;
-			remoteInfo = iDOSThumbnail;
-		};
 		E7B2BBEC252628D300490083 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
@@ -3179,11 +3165,9 @@
 				E79610262564DC9700556B9D /* PBXTargetDependency */,
 				E7B2BBED252628D300490083 /* PBXTargetDependency */,
 				E7BE1298128BF31A0046990B /* PBXTargetDependency */,
-				E7BE129A128BF31A0046990B /* PBXTargetDependency */,
 				E7BE129C128BF31A0046990B /* PBXTargetDependency */,
+				E7BE129A128BF31A0046990B /* PBXTargetDependency */,
 				E7BE12A0128BF31A0046990B /* PBXTargetDependency */,
-				E796109D256A6B2B00556B9D /* PBXTargetDependency */,
-				E79610A0256A6B5700556B9D /* PBXTargetDependency */,
 			);
 			name = iDOS;
 			productName = dospad;
@@ -3222,11 +3206,11 @@
 					};
 					E7B2BBCD252155EE00490083 = {
 						CreatedOnToolsVersion = 11.6;
-						DevelopmentTeam = 4C8YZND49H;
+						DevelopmentTeam = 5324A38GMP;
 						ProvisioningStyle = Automatic;
 					};
 					E7BE1297128BF31A0046990B = {
-						DevelopmentTeam = 4C8YZND49H;
+						DevelopmentTeam = 5324A38GMP;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
@@ -3765,16 +3749,6 @@
 			target = E7960F452564CE4D00556B9D /* mt32emu */;
 			targetProxy = E79610252564DC9700556B9D /* PBXContainerItemProxy */;
 		};
-		E796109D256A6B2B00556B9D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E7B2BBCD252155EE00490083 /* iDOSThumbnail */;
-			targetProxy = E796109C256A6B2B00556B9D /* PBXContainerItemProxy */;
-		};
-		E79610A0256A6B5700556B9D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E7B2BBCD252155EE00490083 /* iDOSThumbnail */;
-			targetProxy = E796109F256A6B5700556B9D /* PBXContainerItemProxy */;
-		};
 		E7B2BBED252628D300490083 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E7B2BBCD252155EE00490083 /* iDOSThumbnail */;
@@ -4131,7 +4105,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 20210108;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 4C8YZND49H;
+				DEVELOPMENT_TEAM = 5324A38GMP;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -4153,7 +4127,7 @@
 				MARKETING_VERSION = 2.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.litchie.idosgames.thumbnail;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oskharkov.idosgames.thumbnail;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -4198,7 +4172,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 20210108;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 4C8YZND49H;
+				DEVELOPMENT_TEAM = 5324A38GMP;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -4215,7 +4189,7 @@
 				MARKETING_VERSION = 2.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.litchie.idosgames.thumbnail;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oskharkov.idosgames.thumbnail;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -4261,7 +4235,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 20210108;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 4C8YZND49H;
+				DEVELOPMENT_TEAM = 5324A38GMP;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -4278,7 +4252,7 @@
 				MARKETING_VERSION = 2.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.litchie.idosgames.thumbnail;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oskharkov.idosgames.thumbnail;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -4296,7 +4270,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 20210108;
-				DEVELOPMENT_TEAM = 4C8YZND49H;
+				DEVELOPMENT_TEAM = 5324A38GMP;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = dospad/DPPrefix.pch;
@@ -4316,7 +4290,7 @@
 					"-framework",
 					UIKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.litchie.idosgames;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oskharkov.idosgames;
 				PRODUCT_NAME = iDOS;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -4333,7 +4307,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 20210108;
-				DEVELOPMENT_TEAM = 4C8YZND49H;
+				DEVELOPMENT_TEAM = 5324A38GMP;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = dospad/DPPrefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -4350,7 +4324,7 @@
 					"-framework",
 					UIKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.litchie.idosgames;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oskharkov.idosgames;
 				PRODUCT_NAME = iDOS;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -4444,7 +4418,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 20210108;
-				DEVELOPMENT_TEAM = 4C8YZND49H;
+				DEVELOPMENT_TEAM = 5324A38GMP;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = dospad/DPPrefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -4462,7 +4436,7 @@
 					"-framework",
 					UIKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.litchie.idosgames;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oskharkov.idosgames;
 				PRODUCT_NAME = iDOS;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
