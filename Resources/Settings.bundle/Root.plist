@@ -172,6 +172,34 @@
 			<false/>
 		</dict>
 		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Aternative Mouse Scheme</string>
+			<key>FooterText</key>
+			<string>Pan around one half of the screen to move mouse, tap while another finger is down for left click, tap when no other touches for right click</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Alternative mouse scheme</string>
+			<key>Key</key>
+			<string>alt_mouse_scheme</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Left screen half for mouse move</string>
+			<key>Key</key>
+			<string>alt_mouse_left_handed</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
 			<key>Title</key>
 			<string>Overlay Control Transparency</string>
 			<key>Type</key>

@@ -75,6 +75,11 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
 
+// Alternative mouse scheme
+- (void)altTouchBegan:(UITouch *)touch;
+- (void)altTouchEnded:(UITouch *)touch;
+- (void)altTouchMoved:(UITouch *)touch;
+
 #if SDL_IPHONE_KEYBOARD
 - (void)showKeyboard;
 - (void)hideKeyboard;

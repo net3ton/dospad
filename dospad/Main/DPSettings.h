@@ -34,6 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly) BOOL autoOpenLastPackage;
 @property (readonly) BOOL pixelatedScaling;
 @property (readonly) BOOL mouseAbsEnable;
+@property (readonly) BOOL altMouseScheme;
+@property (readonly) BOOL altMouseLeftHanded;
 
 + (DPSettings*)shared;
 

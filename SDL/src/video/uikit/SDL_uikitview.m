@@ -74,6 +74,11 @@ void SDL_init_keyboard()
 	} _pendingClicks [MAX_PENDING_CLICKS];
 	int _pendingClickIndex;
 	int _pendingClickCount;
+    
+    // Alternative mouse scheme
+    UITouch *m_moveTouch;
+    UITouch *m_clickTouch;
+    bool m_bIsClickLeft;
 }
 
 @end
@@ -161,6 +166,13 @@ static CGFloat CGPointDistanceToPoint(CGPoint a, CGPoint b)
         }
     }
     
+    // when enabled - just override vanilla behaviour
+    if([DPSettings shared].altMouseScheme)
+    {
+        [self altTouchBegan:touch];
+        return;
+    }
+    
 	if (!_primaryTouch) {
 		//NSLog(@"primary began");
 		_primaryTouch = touch;
@@ -196,6 +208,13 @@ static CGFloat CGPointDistanceToPoint(CGPoint a, CGPoint b)
             }
         }
 
+        // when enabled - just override vanilla behaviour
+        if([DPSettings shared].altMouseScheme)
+        {
+            [self altTouchEnded:touch];
+            continue;
+        }
+        
 		if (touch == _primaryTouch) {
 			// clear all buton states
 			NSLog(@"primary cancel");
@@ -224,6 +243,13 @@ static CGFloat CGPointDistanceToPoint(CGPoint a, CGPoint b)
             }
         }
 
+        // when enabled - just override vanilla behaviour
+        if([DPSettings shared].altMouseScheme)
+        {
+            [self altTouchEnded:touch];
+            continue;
+        }
+        
 		if (touch == _primaryTouch) {
 			
 			//NSLog(@"primary ended tap count %d", (int)[_primaryTouch tapCount]);
@@ -273,6 +299,13 @@ static CGFloat CGPointDistanceToPoint(CGPoint a, CGPoint b)
             }
         }
 
+        // when enabled - just override vanilla behaviour
+        if([DPSettings shared].altMouseScheme)
+        {
+            [self altTouchMoved:touch];
+            continue;
+        }
+        
 		if (touch == _primaryTouch)
 		{
 			CGPoint a = [touch previousLocationInView:self];
@@ -529,7 +562,91 @@ static CGFloat CGPointDistanceToPoint(CGPoint a, CGPoint b)
 
 #endif
 
+// MARK: Alternative mouse scheme
 
+// Alternative touch mouse emulation (I found it much more convinient for HoMM2 and other strategy games)
+// - pan around right side of the screen is translated to mouse move
+// - tap while another finger is down is left click
+// - tap when no other touches is right click
+
+- (void)altTouchBegan:(UITouch *)touch
+{
+    // use one half of the screen for moving mouse
+    const CGFloat viewWidth2 = self.bounds.size.width / 2;
+    const CGPoint touchPos = [touch locationInView:self];
+    
+    // right half by default
+    bool bIsMouseMove = (touchPos.x > viewWidth2);
+    if ([DPSettings shared].altMouseLeftHanded)
+    {
+        bIsMouseMove = !bIsMouseMove;
+    }
+    
+    // mouse move touch
+    if (bIsMouseMove)
+    {
+        if (!m_moveTouch)
+        {
+            m_moveTouch = touch;
+        }
+    }
+    // mouse click touch
+    else
+    {
+        if (!m_clickTouch)
+        {
+            m_clickTouch = touch;
+            
+            // left click - if we still keep mouse touch
+            if (m_moveTouch != nil)
+            {
+                m_bIsClickLeft = true;
+                [self sendMouseEvent:0 left:YES down:YES];
+            }
+            // right click - if no other touches
+            else
+            {
+                m_bIsClickLeft = false;
+                [self sendMouseEvent:0 left:NO down:YES];
+            }
+        }
+    }
+}
+
+- (void)altTouchEnded:(UITouch *)touch
+{
+    if (touch == m_moveTouch)
+    {
+        m_moveTouch = nil;
+    }
+    else if (touch == m_clickTouch)
+    {
+        if (m_bIsClickLeft)
+        {
+            [self sendMouseEvent:0 left:YES down:NO];
+        }
+        else
+        {
+            [self sendMouseEvent:0 left:NO down:NO];
+        }
+        
+        m_clickTouch = nil;
+    }
+}
+
+- (void)altTouchMoved:(UITouch *)touch
+{
+    if (touch == m_moveTouch)
+    {
+        const CGPoint touchPrevPos = [touch previousLocationInView:self];
+        const CGPoint touchPos = [touch locationInView:self];
+
+        const CGFloat dx = touchPos.x - touchPrevPos.x;
+        const CGFloat dy = touchPos.y - touchPrevPos.y;
+        
+        [self sendMouseMotion:0 x:dx y:dy];
+    }
+}
 
 @end
 
